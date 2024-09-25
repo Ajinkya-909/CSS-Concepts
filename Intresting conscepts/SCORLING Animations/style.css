@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  height: 5px;
+  background-color: black;
+}
+
+body {
+  background-color: rgb(219, 207, 207);
+}
+
+section {
+  background-color: rgb(19, 56, 61);
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  background-position: center center;
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+p {
+  color: black;
+  font-family: cursive;
+  width: 30%;
+  text-align: center;
+  font-size: large;
+  animation: right both;
+  animation-timeline: view(0% 30%);
+}
+
+.box img {
+  width: 30%;
+  height: 30%;
+  animation: left both;
+  animation-timeline: view(0% 30%);
+}
+
+/* here animation needed to be given according to the condition
+    imp role is played by the animation time line property if it gives error try mdn refference for it 
+    here animation-timeline: view(start-value end-value)
+    
+*/
+
+@keyframes left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: left both;
+    animation-timeline: view(0% 30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes right {
+  from {
+    opacity: 0;
+    transform: translateX(+100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

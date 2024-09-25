@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(78, 69, 69);
+}
+h2 {
+  color: whitesmoke;
+  padding: 10px 20px;
+}
+
+.container {
+  height: 400px;
+  width: 400px;
+  background-color: rgb(100, 92, 92);
+  /*here where work is to be done the platform is ment to be made relative do the elements fo the area are absolute */
+  position: relative;
+  top: 50px;
+  left: 500px;
+}
+
+.container::before {
+  /*content is a must if you add a pseudo element */
+  content: "";
+  /*height and width are written so that the after element are exceeded by a certain limit*/
+  height: calc(100% + 5px);
+  width: calc(100% + 5px);
+  /*background is used to give a perticular gradiant*/
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    rgb(221, 110, 184),
+    purple,
+    red,
+    orange,
+    yellow,
+    rgb(9, 175, 9),
+    cyan,
+    rgb(221, 110, 184),
+    rgb(153, 16, 153)
+  );
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  z-index: -1;
+  /*size is given so the animation could be observed*/
+  background-size: 400%;
+  animation: run 10s linear infinite alternate;
+}
+
+.container::after {
+  content: "";
+  height: calc(100% + 5px);
+  width: calc(100% + 5px);
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    rgb(221, 110, 184),
+    purple,
+    red,
+    orange,
+    yellow,
+    rgb(9, 175, 9),
+    cyan,
+    rgb(221, 110, 184),
+    rgb(153, 16, 153)
+  );
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  z-index: -1;
+  background-size: 400%;
+  animation: run 10s linear infinite alternate;
+}
+.container::after {
+  filter: blur(30px);
+}
+
+@keyframes run {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

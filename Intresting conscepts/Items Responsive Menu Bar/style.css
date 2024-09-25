@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(29, 26, 26);
+}
+
+.container {
+  height: 40vh;
+  width: 90vw;
+  margin: 60px auto;
+}
+/*here transform style & perspective property is given to the parent element*/
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  background-color: rgb(29, 26, 26);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.box {
+  height: 200px;
+  width: 100px;
+  margin: 7px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(0);
+  transition-duration: 0.5s;
+}
+
+.box:hover {
+  filter: brightness(1);
+  transform: translateZ(200px);
+  z-index: 1;
+}
+/*here + declares that element targeted should be next to the targeted element herer its right */
+.box:hover + .box {
+  filter: brightness(0.5);
+  transform: translateZ(100px) rotateY(45deg);
+  z-index: 1;
+}
+
+/*the astric sign indicates that the element is the same categori as the targeted one its according to me it might be different*/
+
+.box:hover + * + * {
+  filter: brightness(0.3);
+  transform: translateZ(50px) rotateY(20deg);
+  z-index: 1;
+}
+
+.box:hover + * + * + * {
+  filter: brightness(0.1);
+  z-index: 1;
+}
+
+/*for left side elements*/
+
+/*has function is used to target elements that are present in multiple sections but a special style is required to be given to it, so [has] is used, info about is limited to understand for me try reading about it again mostly we can do it by JS  but its for practice of css try understanding it if need */
+
+.box:has(+ .box:hover) {
+  filter: brightness(0.5);
+  transform: translateZ(100px) rotateY(-45deg);
+}
+
+.box:has(+ * + *:hover) {
+  filter: brightness(0.3);
+  transform: translateZ(50px) rotateY(-20deg);
+}
+
+.box:has(+ * + * + *:hover) {
+  filter: brightness(0.1);
+}

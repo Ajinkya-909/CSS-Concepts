@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+p,
+h1,
+h2 {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.content {
+  width: 45%;
+  text-align: center;
+}
+
+/*here the div tried to blured or given glass effect is given propertys 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  make sure that the background is present or some other element is present that sacrifies it's presence to show the glass effect
+*/
+
+.container {
+  background-color: rgba(85, 71, 71, 0.4);
+  margin-top: 80px;
+  margin-left: calc(50% - 35vw);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  width: 70vw;
+  height: 80vh;
+  border-radius: 100px;
+  border: 2px solid wheat;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+/*designs*/
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.big {
+  height: 350px;
+  width: 350px;
+  background: linear-gradient(45deg, blue, cyan);
+  bottom: 11px;
+  left: 50px;
+}
+
+.medium {
+  height: 250px;
+  width: 250px;
+  background: linear-gradient(45deg, red, yellow);
+  top: 40px;
+  right: 60px;
+}
+
+.small {
+  height: 175px;
+  width: 175px;
+  background: linear-gradient(45deg, green, lightgreen);
+  top: 30px;
+  left: 400px;
+}
+
+.smaller {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(45deg, purple, pink);
+  bottom: 20px;
+  right: 300px;
+}
